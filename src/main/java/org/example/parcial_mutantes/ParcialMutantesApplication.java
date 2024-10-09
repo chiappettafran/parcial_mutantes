@@ -8,5 +8,4 @@ public class ParcialMutantesApplication {
     public static void main(String[] args) {
         SpringApplication.run(ParcialMutantesApplication.class, args);
     }
-
 }
