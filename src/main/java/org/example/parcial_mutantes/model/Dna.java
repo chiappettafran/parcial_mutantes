@@ -2,6 +2,7 @@ package org.example.parcial_mutantes.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @Data

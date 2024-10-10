@@ -2,6 +2,7 @@ package org.example.parcial_mutantes.controller;
 
 import org.example.parcial_mutantes.dto.DnaRequest;
 import org.example.parcial_mutantes.service.MutantService;
+import org.example.parcial_mutantes.validations.Validations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ public class MutantController {
 
     @PostMapping("/")
     public ResponseEntity<?> checkMutant(@RequestBody DnaRequest dnaRequest) {
+        Validations.validateDna(dnaRequest);
         boolean isMutant = mutantService.isMutant(dnaRequest.getDna());
         if (isMutant) {
             return ResponseEntity.ok().build(); // HTTP 200-OK

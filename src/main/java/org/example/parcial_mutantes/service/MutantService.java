@@ -39,10 +39,10 @@ public class MutantService {
     }
 
     private boolean checkIfMutant(String[] dna) {
-        int ocurrences = 0;
+        int ocurrences = 0; //contador de ocurrencias, se incrementará en 1 cada vez que se encuentre una secuencia
         for (int i = 0; i < dna.length; i++) {
-            for (int j = 0; j < dna.length; j++) {
-                if (i > dna.length - 4 && j > dna.length - 4) {
+            for (int j = 0; j < dna.length; j++) { //recorro cada letra de cada cadena. La base es partir desde el elemento [i][j] e ir incrementando ambos o uno de los dos segun el caso para encontrar coincidencias
+                if (i > dna.length - 4 && j > dna.length - 4) {//ninguna fila, columna, o diagonal necesariamente partirá desde el bloque inferior derecho, entonces el programa directamente no analiza nada acá.
                     break;
                 } else {
                     if (j <= dna.length - 4) {
